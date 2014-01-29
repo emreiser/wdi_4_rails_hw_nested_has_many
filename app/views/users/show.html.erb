@@ -1,2 +1,10 @@
 <h1>Summary for <%= @user.name %></h1>
 <h3><%= link_to "Back to Users", users_path %></h3>
+
+<dl>
+<% @user.articles.each do |article| %>
+	<dt><%= article.title %></dt>
+		<dd><%= truncate(article.body, length: 200) %></dd>
+
+<% end %>
+</dl>
