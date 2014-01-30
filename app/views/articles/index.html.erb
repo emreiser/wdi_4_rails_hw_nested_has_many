@@ -1,4 +1,6 @@
 <h1>Articles</h1>
+<h2><%= link_to "See All Users", users_path %></h2>
+
 <% if @user.present? %>
 <% end %>
 
@@ -7,7 +9,7 @@
 	<li><h3><%= link_to article.title, user_article_path(article.user, article) %></h3>
 	<p>Authored by <%= link_to article.user.name, user_path(article.user) %> on <%= article.created_at.strftime("%d %b. %Y") %></p>
 	<p><%= truncate(article.body, length: 200) %></p>
-	<p><%= article.comments.count %> comments</p>
+	<p><%= article.comments.count %> comments </p>
 
 
 <% end %>

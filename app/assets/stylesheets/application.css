@@ -16,3 +16,16 @@ header {
 input, textarea {
 	display: block;
 }
+
+ul li {
+	padding-bottom: 25px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a, a:active, a:visited {
+	color: gray;
+
+}
