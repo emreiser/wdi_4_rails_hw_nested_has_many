@@ -1,15 +1,19 @@
+<article>
 <h1><%= @article.title %></h1>
-<h4><%= link_to "Edit article", edit_user_article_path(@user, @article) %></h4>
-
-<p><%= @article.body %></p>
+	<h4><%= link_to "Edit article", edit_user_article_path(@user, @article) %></h4>
+	<p><%= @article.body %></p>
+</article>
 
 <h4>Comments:</h4>
+<h5><%= link_to "Submit new Comment", new_user_article_comment_path(@user, @article) %></h5>
+
 <ul>
 <% @comments.each do |comment| %>
-	<li><%= comment.body %></li>
+	<li><%= comment.body %>
+	<p>(Submitted on <%= comment.created_at.strftime("%d %b. %Y")%>)
+	</li>
 <% end %>
 </ul>
 
-<h2><%= link_to "Submit new Comment", new_user_article_comment_path(@user, @article) %></h2>
 
 </dl>
