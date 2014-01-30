@@ -2,13 +2,15 @@
 <h2><%= link_to "See All Users", users_path %></h2>
 
 <ul>
-<% @articles.each do |article| %>
-	<li><h3><%= link_to article.title, user_article_path(article.user, article) %></h3>
-	<p>Authored by <%= link_to article.user.name, user_path(article.user) %> on <%= article.created_at.strftime("%d %b. %Y") %></p>
-	<p><%= truncate(article.body, length: 200) %></p>
-	<p><%= article.comments.count %> comments </p>
-	</li>
+	<% @articles.each do |article| %>
 
-<% end %>
+		<li>
+		<h3><%= link_to article.title, user_article_path(article.user, article) %></h3>
+		<p>Authored by <%= link_to article.user.name, user_path(article.user) %> on <%= article.created_at.strftime("%d %b. %Y") %></p>
+		<p><%= truncate(article.body, length: 200) %></p>
+		<p><%= article.comments.count %> comments </p>
+		</li>
+
+	<% end %>
 
 </ul>

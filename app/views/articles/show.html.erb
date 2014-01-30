@@ -8,11 +8,11 @@
 <h5><%= link_to "Submit new Comment", new_user_article_comment_path(@user, @article) %></h5>
 
 <ul>
-<% @comments.each do |comment| %>
-	<li><%= comment.body %>
-	<p>(Submitted on <%= comment.created_at.strftime("%d %b. %Y")%>)
-	</li>
-<% end %>
+	<% @comments.each do |comment| %>
+		<li><%= comment.body %>
+		<p>(Submitted on <%= comment.created_at.strftime("%d %b. %Y")%>)
+		</li>
+	<% end %>
 </ul>
 
 
