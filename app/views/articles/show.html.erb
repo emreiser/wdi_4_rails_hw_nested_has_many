@@ -3,6 +3,13 @@
 
 <p><%= @article.body %></p>
 
+<h4>Comments:</h4>
+<ul>
+<% @comments.each do |comment| %>
+	<li><%= comment.body %></li>
+<% end %>
+</ul>
+
 <h2><%= link_to "Submit new Comment", new_user_article_comment_path(@user, @article) %></h2>
 
 </dl>

@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 			@user = User.find(params[:user_id])
 			@articles = @user.articles.order(created_at: :asc)
 		else
-			@articles = Article.all.order(created_at: :asc)
+			@articles = Article.order(created_at: :asc)
 		end
 	end
 
@@ -37,6 +37,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find(params[:id])
+		@comments = @article.comments
 	end
 
 
