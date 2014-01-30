@@ -1,5 +1,8 @@
 <h1>Users</h1>
 
+<ul>
 	<% @users.each do |user| %>
-		<h2><%= link_to user.name, user_path(user.id) %> | <%= user.email %></h2>
+		<li><h3><%= link_to user.name, user_path(user.id) %></h3><p>User since <%= user.created_at.strftime("%d %b. %Y") %></p>
+		</li>
 	<% end %>
+</ul>
